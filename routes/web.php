@@ -1,5 +1,7 @@
 <?php
 
+use Customers\Http\Controllers\backend\Customers;
+use Customers\Http\Controllers\frontend\Customers as FrontendCustomers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hmvc', function () {
+    return view('welcome');
+});
+
+
+Route::get('/user', [Customers::class, 'index']);
+
+Route::get('/له', [FrontendCustomers::class, 'index']);
