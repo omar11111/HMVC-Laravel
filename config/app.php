@@ -1,5 +1,7 @@
 <?php
 
+use Customers as Customers;
+
 return [
 
     /*
@@ -174,6 +176,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Customers\Providers\CustomerServiceProvider::class,
 
     ],
 

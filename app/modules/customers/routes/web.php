@@ -13,16 +13,19 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hmvc', function () {
-    return view('welcome');
+Route::prefix("backend")->as('Admin.')->group(function () {
+    Route::get('/user', [Customers::class, 'index'])->name('user');
 });
 
+Route::prefix("frontend")->group(function () {
+    Route::get('/user', [FrontendCustomers::class, 'index']);
+});
 
 // Route::get('/user', [Customers::class, 'index']);
 
