@@ -8,6 +8,6 @@ class Customers extends Controller
 {
     public function index()
     {
-       dd("frontend");
+        return view("customers::frontend.index");
     }
 }
