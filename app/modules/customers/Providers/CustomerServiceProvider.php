@@ -28,9 +28,13 @@ class CustomerServiceProvider extends ServiceProvider
       $ds = DIRECTORY_SEPARATOR;
 
     //   $prefix = File::getRequire(__DIR__.$ds."..".$ds."config".$ds."routes.php");
+     config(["customers" =>File::getRequire(__DIR__.$ds."..".$ds."config".$ds."routes.php")]);
+
       $this->loadRoutesFrom(__DIR__.$ds."..".$ds."routes".$ds."web.php");
 
 
-    //  dd(config(["route"=>$prefix])) ;
+
+
+
     }
 }

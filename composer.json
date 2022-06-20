@@ -26,7 +26,10 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Customers\\": "app/modules/customers/"
-        }
+        },
+        "files": [
+            "app/helpers/route.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

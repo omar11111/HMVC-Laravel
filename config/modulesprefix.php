@@ -1,7 +1,7 @@
 <?php
  return  array(
     "prefix" =>[
-        "backend" =>"backend" ,
+        "backend" =>"admin" ,
         "frontend"=>"frontend"
         ])
 ?>

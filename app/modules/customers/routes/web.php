@@ -19,12 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix("backend")->as('Admin.')->group(function () {
-    Route::get('/user', [Customers::class, 'index'])->name('user');
+Route::prefix(buildPrefix("customers"))->group(function () {
+    Route::get('/all', [Customers::class, 'index'])->name('user');
 });
 
-Route::prefix("frontend")->group(function () {
-    Route::get('/user', [FrontendCustomers::class, 'index']);
+Route::prefix(buildPrefix("customers","frontend"))->group(function () {
+    Route::get('/all', [FrontendCustomers::class, 'index']);
 });
 
 // Route::get('/user', [Customers::class, 'index']);
