@@ -8,6 +8,7 @@ class Customers extends Controller
 {
     public function index()
     {
-        return view("customers::frontend.index");
+        // return view("customers::frontend.index");
+        return loadView('customers',"frontend","index");
     }
 }
