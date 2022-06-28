@@ -26,7 +26,11 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Customers\\": "app/modules/customers/"
+
         },
+        "classmap": [
+          "app/modules/customers/database/seeders"
+        ],
         "files": [
             "app/helpers/route.php"
         ]
