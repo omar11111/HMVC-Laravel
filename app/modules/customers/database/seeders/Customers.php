@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Customers\Models\Customer;
 use Illuminate\Database\Seeder;
 
 class Customers extends Seeder
@@ -14,10 +15,9 @@ class Customers extends Seeder
      */
     public function run()
     {
-        User::Create([
+        Customer::Create([
             'name' =>"omar",
-            "email" =>"omar",
-            "password" =>bcrypt("omar")
+          
         ]);
     }
 
