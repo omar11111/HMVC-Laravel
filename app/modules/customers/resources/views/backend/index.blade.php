@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+     
+     {{ __('customers::index.index') }}
     <h1>admin</h1>
 </body>
 </html>

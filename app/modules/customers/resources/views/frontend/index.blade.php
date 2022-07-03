@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    {{ __('customers::index.index') }}
     <h1>frontend</h1>
 </body>
 </html>
