@@ -32,7 +32,8 @@
           "app/modules/customers/database/seeders"
         ],
         "files": [
-            "app/helpers/route.php"
+            "app/helpers/route.php",
+            "app/helpers/path.php"
         ]
     },
     "autoload-dev": {

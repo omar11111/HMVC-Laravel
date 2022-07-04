@@ -25,16 +25,18 @@ class CustomerServiceProvider extends ServiceProvider
     public function boot()
     {
     //   the separators between the directory differentiate form OS to other OS
-    $ds = DIRECTORY_SEPARATOR;
-    $modelName = "customers";
 
+    $modelName = basename(dirname(__DIR__, 1));
+// dd($modelName);
     //   $prefix = File::getRequire(__DIR__.$ds."..".$ds."config".$ds."routes.php");
-    config([$modelName =>File::getRequire(__DIR__.$ds."..".$ds."config".$ds."routes.php")]);
+    config([$modelName =>File::getRequire(loadConfigFile('routes',$modelName))
+]);
 
-    $this->loadRoutesFrom(__DIR__.$ds."..".$ds."routes".$ds."web.php");
-    $this->loadViewsFrom(__DIR__.$ds."..".$ds."resources".$ds."views",$modelName);
-    $this->loadTranslationsFrom(__DIR__.$ds."..".$ds."resources".$ds."lang",$modelName);
-    $this->loadMigrationsFrom(__DIR__.$ds."..".$ds."database".$ds."migrations");
+    $this->loadRoutesFrom(loadRoute('web',$modelName));
+
+    $this->loadViewsFrom(loadViews($modelName),$modelName);
+    $this->loadTranslationsFrom(loadLang($modelName),$modelName);
+    $this->loadMigrationsFrom(loadMigrations($modelName));
 
 
 
